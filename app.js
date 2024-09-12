@@ -5,6 +5,22 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('3d-model').appendChild(renderer.domElement);
 
+// Set initial camera and model scale based on screen size
+function adjustCameraAndModelForScreenSize() {
+  const screenWidth = window.innerWidth;
+  
+  if (screenWidth < 768) {  // Mobile view
+    camera.position.set(0, 2, 8);  // Adjust camera position for mobile
+    model.scale.set(0.8, 0.8, 0.8);  // Smaller scale for mobile
+  } else if (screenWidth >= 768 && screenWidth < 1024) {  // Tablet view
+    camera.position.set(0, 3, 10);  // Adjust camera for tablet
+    model.scale.set(1, 1, 1);  // Normal scale for tablet
+  } else {  // Desktop view
+    camera.position.set(0, 4, 12);  // Adjust camera for desktop
+    model.scale.set(1.5, 1.5, 1.5);  // Larger scale for desktop
+  }
+}
+
 // Set up initial camera position
 camera.position.z = 10;
 
