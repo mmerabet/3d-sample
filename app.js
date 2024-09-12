@@ -26,7 +26,7 @@ camera.position.z = 10;
 
 // Load the 3D model
 const loader = new THREE.GLTFLoader();
-loader.load('scene.gltf', function (gltf) {
+loader.load('/3d-sample/scene.gltf', function (gltf) {
   const model = gltf.scene;
   scene.add(model);
 
