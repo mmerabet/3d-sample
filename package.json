@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build:css": "postcss src/styles.css -o dist/styles.css",
-    "watch:css": "postcss src/styles.css -o dist/styles.css --watch"
+    "build:css": "postcss src/styles.css -o styles.css",
+    "watch:css": "postcss src/styles.css -o styles.css --watch"
   },
   "keywords": [],
   "author": "",
